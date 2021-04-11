@@ -11,7 +11,7 @@ namespace homework2
             //int[] intArray = new int[5];
             //int[] evenNumbers = new int[0];
 
-            //for(int i=0; i<=intArray.Length; i++)
+            //for(int i=0; i<intArray.Length; i++)
             //{
             //    intArray[i] = int.Parse(Console.ReadLine());
             //    if (intArray[i] % 2 == 0)
@@ -27,10 +27,13 @@ namespace homework2
             //Console.ReadLine();
 
 
+            //I wrote this first one by mistake, because i misread that they're supposed to be added to a new array and then sum them within that arra. I didnt finish it, but I like how i applied the logic of creating a new array
+
+
             //int[] intArray = new int[5];
             //int evenSum = 0;
 
-            //for (int i = 0; i <= intArray.Length; i++)
+            //for (int i = 0; i < intArray.Length; i++)
             //{
             //    Console.WriteLine("Enter a number");
 
@@ -58,8 +61,8 @@ namespace homework2
 
             #region Task2
 
-            string[] studentsG1 = { "Maxx", "Flo", "Alessia", "Arantxa", "Berta" };
-            string[] studentsG2 = { "Andrea", "Menci", "Cousin1", "Cousin2", "Roomates" };
+            string[] studentsG1 = new string [] { "Maxx", "Flo", "Alessia", "Arantxa", "Berta" };
+            string[] studentsG2 = new string[] { "Andrea", "Menci", "Cousin1", "Cousin2", "Roomates" };
 
             Console.WriteLine("Please write either 1 or 2");
             string input = Console.ReadLine();
@@ -68,10 +71,13 @@ namespace homework2
             {
                 case "1":
                     Console.WriteLine(studentsG1);
+                    break;
                 case "2":
                     Console.WriteLine(studentsG2);
+                    break;
                 default:
                     Console.WriteLine("Please enter either 1 or 2");
+                    break;
 
             }
 
