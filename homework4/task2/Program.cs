@@ -16,7 +16,9 @@ namespace task2
 
             Car car4 = new Car("Porche", 450, new Driver());
 
-          
+            Car One;
+            Car Two;
+
 
             Driver driver1 = new Driver("Bob", 5);
             Driver driver2 = new Driver("Jill", 7);
@@ -33,20 +35,220 @@ namespace task2
             if (carChoice1 == carChoice2)
             {
                 Console.WriteLine("You have to choose different cars!");
-            } else if (driverChoice1 == driverChoice2)
+            }
+            else if (driverChoice1 == driverChoice2)
             {
                 Console.WriteLine("You have to choose different drivers!");
-            } else
+            }
+            else
             {
-                switch (carChoice1, driverChoice1)
+                switch (carChoice1)
                 {
-                    case ("hyndai", : carChoice1 = car1;
-                    break;
+                    case "hyndai":
+                        {
+                            switch (driverChoice1)
+                            {
+                                case "bob":
+                                    car1.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car1.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car1.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car1.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                            One = car1;
+                        }
+                        break;
+                    case "mazda":
+                        {
+                            switch (driverChoice1)
+                            {
+                                case "bob":
+                                    car2.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car2.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car2.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car2.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                            One = car2;
+                        }
+                        break;
+
+                    case "ferrari":
+                        {
+                            switch (driverChoice1)
+                            {
+                                case "bob":
+                                    car3.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car3.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car3.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car3.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                            One = car3;
+                        }
+                        break;
+
+                    case "porche":
+                        {
+                            switch (driverChoice1)
+                            {
+                                case "bob":
+                                    car4.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car4.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car4.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car4.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                            One = car4;
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("Why didnt u just follow the simple instructions? go back and pick a car again");
+                        break;
                 }
+
+                switch (carChoice2)
+                {
+                    case "hyndai":
+                        {
+                            switch (driverChoice2)
+                            {
+                                case "bob":
+                                    car1.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car1.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car1.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car1.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                            Two = car1;
+                        }
+                        break;
+                    case "mazda":
+                        {
+                            switch (driverChoice2)
+                            {
+                                case "bob":
+                                    car2.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car2.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car2.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car2.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                            Two = car2;
+                        }
+                        break;
+
+                    case "ferrari":
+                        {
+                            switch (driverChoice2)
+                            {
+                                case "bob":
+                                    car3.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car3.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car3.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car3.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                            Two = car3;
+                        }
+                        break;
+
+                    case "porche":
+                        {
+                            switch (driverChoice2)
+                            {
+                                case "bob":
+                                    car4.Driver = driver1;
+                                    break;
+                                case "jill":
+                                    car4.Driver = driver2;
+                                    break;
+                                case "sam":
+                                    car4.Driver = driver3;
+                                    break;
+                                case "anne":
+                                    car4.Driver = driver4;
+                                    break;
+                                default:
+                                    Console.WriteLine("Buddy, u fucked up somewhere");
+                                    break;
+                            }
+                             Two = car4;
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("Why didnt u just follow the simple instructions? go back and pick a car again");
+                        break;
+                }
+
             }
 
-            
-
+            Console.WriteLine($"{Car.RaceCars(One, Two)}");
 
         }
 
@@ -101,19 +303,16 @@ namespace task2
                 if (one.CalculateSpeed() > two.CalculateSpeed())
                 {
                     Console.WriteLine("Car 1 is faster");
-                } else if (one.CalculateSpeed() < two.CalculateSpeed())
+                }
+                else if (one.CalculateSpeed() < two.CalculateSpeed())
                 {
                     Console.WriteLine("Car 2 is faster");
-                } else
+                }
+                else
                 {
                     Console.WriteLine("Both cars have the same speed");
                 }
             }
-
-
-    }
-
-        
-
+        }
     }
 }
