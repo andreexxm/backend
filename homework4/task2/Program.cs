@@ -7,21 +7,16 @@ namespace task2
         static void Main(string[] args)
         {
 
-            Car car1 = new Car("Hyndai", 300);
-            car1.Model = "Hyndai";
-            car1.Speed = 300;
+            
+            Car car1 = new Car("Hyndai", 300, new Driver());
 
-            Car car2 = new Car();
-            car2.Model = "Mazda";
-            car2.Speed = 240;
+            Car car2 = new Car("Mazda", 200, new Driver());
 
-            Car car3 = new Car();
-            car3.Model = "Ferrari";
-            car3.Speed = 400;
+            Car car3 = new Car("Ferrari", 400, new Driver());
 
-            Car car4 = new Car();
-            car4.Model = "Porche";
-            car4.Speed = 450;
+            Car car4 = new Car("Porche", 450, new Driver());
+
+          
 
             Driver driver1 = new Driver("Bob", 5);
             Driver driver2 = new Driver("Jill", 7);
@@ -29,11 +24,11 @@ namespace task2
             Driver driver4 = new Driver("Anne", 10);
 
 
-            string carChoice1 = Console.ReadLine();
-            string carChoice2 = Console.ReadLine();
+            string carChoice1 = Console.ReadLine().ToLower();
+            string carChoice2 = Console.ReadLine().ToLower();
 
-            string driverChoice1 = Console.ReadLine();
-            string driverChoice2 = Console.ReadLine();
+            string driverChoice1 = Console.ReadLine().ToLower();
+            string driverChoice2 = Console.ReadLine().ToLower();
 
             if (carChoice1 == carChoice2)
             {
@@ -43,19 +38,28 @@ namespace task2
                 Console.WriteLine("You have to choose different drivers!");
             } else
             {
-                switch (carChoice1)
+                switch (carChoice1, driverChoice1)
+                {
+                    case ("hyndai", : carChoice1 = car1;
+                    break;
+                }
             }
 
-            }
+            
 
 
         }
+
+        //Classes
 
         public class Driver
         {
             public string DriverName { get; set; }
             public int Skill { get; set; }
 
+            public Driver ()
+            {
+            }
             public Driver(string name, int skill)
             {
                 DriverName = name;
@@ -65,13 +69,17 @@ namespace task2
 
 
 
-        public class Car : Driver
+        public class Car
         {
             public string Model { get; set; }
             public int Speed { get; set; }
-            public string Driver { get; set; }
+            public Driver Driver { get; set; }
 
-            public Car(string model, int speed, string driver)
+            public Car()
+            {
+            }
+
+            public Car(string model, int speed, Driver driver)
             {
                 Model = model;
                 Speed = speed;
@@ -82,19 +90,30 @@ namespace task2
 
             private int CalculateSpeed()
             {
-                int carSpeed = Speed * Skill;
+                int carSpeed = Speed * Driver.Skill;
                 return carSpeed;
             }
 
-            public string RaceCars(string one, string two)
-            {
 
+
+            public void RaceCars(Car one, Car two)
+            {
+                if (one.CalculateSpeed() > two.CalculateSpeed())
+                {
+                    Console.WriteLine("Car 1 is faster");
+                } else if (one.CalculateSpeed() < two.CalculateSpeed())
+                {
+                    Console.WriteLine("Car 2 is faster");
+                } else
+                {
+                    Console.WriteLine("Both cars have the same speed");
+                }
             }
 
 
-        }
+    }
 
-        //https://github.com/sedc-codecademy/skwd9-net-05-oopcsharp/blob/main/G4/Class05/Homework.md
+        
 
     }
 }
